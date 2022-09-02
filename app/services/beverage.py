@@ -10,7 +10,7 @@ base_service = BaseService()
 controller = ControllerFactory.get_controller('beverage')
 
 
-@beverage.route('/',methods=POST)
+@beverage.route('/', methods=POST)
 def create_beverage():
     return base_service.create(controller)
 
