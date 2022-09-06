@@ -3,5 +3,8 @@
     "python.testing.pytestEnabled": true,
     "python.testing.pytestArgs": [
     "app"
+    ],
+    "python.analysis.extraPaths": [
+        "./venv/Lib/site-packages"
     ]
 }
