@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Optional, Sequence
+from typing import Any, List, Optional, Sequence
 
 from sqlalchemy.sql import text, column
 from sqlalchemy import func, desc
