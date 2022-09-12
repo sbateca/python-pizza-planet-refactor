@@ -1,10 +1,12 @@
 import os
+from dotenv import load_dotenv
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+load_dotenv()
 
 class Config:
     DEBUG = True
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLALCHEMY_DATABASE_URI = str(os.environ.get("SQLALCHEMY_DATABASE_URI")).format(os.path.join(BASE_DIR, 'pizza.sqlite'))
+    DATABASE_URI = os.getenv("SQLALCHEMY_DATABASE_URI")
+    SQLALCHEMY_DATABASE_URI = DATABASE_URI + os.path.join(BASE_DIR, 'pizza.sqlite')
