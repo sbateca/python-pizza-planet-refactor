@@ -8,4 +8,4 @@ class Config:
     DEBUG = True
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = str(os.environ.get("SQLALCHEMY_DATABASE_URI")).format(os.path.join(BASE_DIR, 'pizza.sqlite'))
-    print(SQLALCHEMY_DATABASE_URI)
+    
