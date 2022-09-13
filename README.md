@@ -10,6 +10,7 @@ This is an example software for a pizzeria that takes customizable orders.
 - [Running the backend project](#running-the-backend-project)
 - [Running the frontend](#running-the-frontend)
 - [Testing the backend](#testing-the-backend)
+- [Populate database with fake data](#populate-database-with-fake-data)
 
 ## Getting started
 
@@ -111,4 +112,11 @@ ext install ritwickdey.LiveServer
 
 ```bash
 python3 manage.py test
+```
+### Populate database with fake data
+
+If you want to populate the database using mock data you can un the following command
+
+```bash
+python3 populate_db.py
 ```
