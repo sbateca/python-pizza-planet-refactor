@@ -39,7 +39,7 @@ run_local: ## run api locally
 
 .PHONY: test
 test: ## run python api test
-	pytest
+	python manage.py test
 
 
 .PHONY: populate_db
