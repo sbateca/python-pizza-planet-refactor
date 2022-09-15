@@ -130,6 +130,10 @@ make build
 ```bash
 make run
 ```
+The backend will be available with this URL:
+http://localhost:5000/
+and the frontend with
+http://localhost:8080/
 - To stop docker containers
 ```bash
 make stop
