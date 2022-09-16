@@ -11,6 +11,7 @@ This is an example software for a pizzeria that takes customizable orders.
 - [Running the frontend](#running-the-frontend)
 - [Testing the backend](#testing-the-backend)
 - [Populate database with fake data](#populate-database-with-fake-data)
+- [Pizza Planet in Docker](#pizza-planet-in-docker)
 
 ## Getting started
 
@@ -27,7 +28,7 @@ You will need the following general tools:
 - Clone the repo
 
 ```bash
-git clone https://github.com/ioet/python-pizza-planet.git
+git clone https://github.com/sbateca/python-pizza-planet-refactor.git
 ```
 
 - Create a virtual environment in the root folder of the project
@@ -59,9 +60,7 @@ pip3 install -r requirements.txt
 - Start the database (Only needed for the first run):
 
 ```bash
-python3 manage.py db init
-python3 manage.py db migrate
-python3 manage.py db upgrade
+make init_db
 ```
 
 - If you want to use the hot reload feature set FLASK_ENV before running the project:
@@ -81,7 +80,7 @@ set FLASK_ENV=development
 - Run the project with:
 
 ```bash
-python3 manage.py run
+make run_local
 ```
 
 ## Running the frontend
@@ -104,19 +103,38 @@ ext install ritwickdey.LiveServer
 
 - **To avoid CORS errors** start the backend before the frontend, some browsers have CORS issues otherwise
 
-### Testing the backend
+## Testing the backend
 
 - Make sure that you have `pytest` installed
 
 - Run the test command
 
 ```bash
-python3 manage.py test
+make test
 ```
-### Populate database with fake data
+## Populate database with fake data
 
 If you want to populate the database using mock data you can un the following command
 
 ```bash
-python3 populate_db.py
+make populate_db
+```
+## Pizza Planet in Docker
+
+You can run Pizza Planet in Docker using the following commands:
+- To build docker images
+```bash
+make build
+```
+- To start docker containers
+```bash
+make run
+```
+The backend will be available with this URL:
+http://localhost:5000/
+and the frontend with
+http://localhost:8080/
+- To stop docker containers
+```bash
+make stop
 ```

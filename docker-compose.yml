@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  api:
+    container_name: pizza-planet-api
+    image: pizza-planet-api
+    build:
+      context: .
+      dockerfile: ./Docker/Dockerfile.api
+      target: api
+    ports:
+      - 5000:5000
+
+  ui:
+    container_name: pizza-planet-ui
+    image: pizza-planet-ui
+    build:
+      context: .
+      dockerfile: ./Docker/Dockerfile.ui
+      target: ui
+    ports:
+      - 8080:80
